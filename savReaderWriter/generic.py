@@ -71,7 +71,7 @@ class Generic(object):
         # I/O modules, compared to hardcoding the names
         debug = False
         path = os.path.join(os.path.dirname(__file__), "spssio", folder)
-        libs = sorted(os.listdir(path))
+        pylibs = sorted(os.listdir(path))
 
         pats = ['(lib)?icuda?t', '(lib)?icuuc', '(lib)?icui',
                 '(lib)?zlib', '(lib)?spssd?io']

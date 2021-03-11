@@ -408,6 +408,9 @@ def save_sav(path_sav, meta, data, index=False, text_key=None,
             varNames = varNames[:idx] + [new_name] + varNames[idx+1:]
     data.columns = pd.Series(data.columns).map(column_mapper)
 
+    # add in measure levels to be written to file
+    measureLevels = meta['measureLevels']
+
     # Create the multRespDefs definition for the savWriter
     delimited_sets = [
         c
@@ -561,5 +564,6 @@ def save_sav(path_sav, meta, data, index=False, text_key=None,
         formats=formats,
         varLabels=varLabels,
         valueLabels=valueLabels,
-        multRespDefs=multRespDefs
+        multRespDefs=multRespDefs,
+        measureLevels=measureLevels
     )

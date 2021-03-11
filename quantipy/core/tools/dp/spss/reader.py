@@ -86,6 +86,7 @@ def extract_sav_meta(sav_file, name="", data=None, ioLocale='en_US.UTF-8',
 
     # Descriptions of attributes in metadata are are located here :
     # http://pythonhosted.org/savReaderWriter/#savwriter-write-spss-system-files
+    meta['measureLevels'] = metadata.measureLevels ### Read in Measure Levels
     for column in metadata.varNames:
         meta['columns'][column] = {}
         meta['columns'][column]['name'] = column
